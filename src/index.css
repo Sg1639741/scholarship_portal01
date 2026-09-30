@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Government-style standard font sizes */
+  body {
+    @apply text-slate-800 bg-[#F6F8FB];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Accessibility font sizing classes */
+html.text-size-sm {
+  font-size: 14px;
+}
+html.text-size-md {
+  font-size: 16px;
+}
+html.text-size-lg {
+  font-size: 18px;
+}
+
+/* High contrast mode */
+html.high-contrast {
+  filter: contrast(125%);
+}
+
+/* Custom Scrollbar for Official Portals */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Subtle Indian Tricolor top strip */
+.tricolor-strip {
+  background: linear-gradient(90deg, #E86326 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #169343 66.66%);
+  height: 4px;
+}
+
+/* Clean glass morphism & official cards */
+.gov-card-border {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
